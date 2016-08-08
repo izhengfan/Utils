@@ -1,3 +1,11 @@
+/** 
+
+Rate: to achieve simple frame rate control using C++ 11 standard library
+
+By ZHENG Fan fzheng@link.cuhk.edu.hk
+
+*/
+
 #include <iostream>
 #include "Rate.hpp"
 
