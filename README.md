@@ -18,7 +18,7 @@ while(true)
 }
 ```
 
-If the execution use more time than the time limit set by FPS, `Rate` just set the current moment as the timing beginning point. 
+If the execution in one loop use more time than the time limit set by FPS, `Rate` just set the current moment as the timing beginning point. 
 
 Refer to `test.cpp` for the usage. Test it like:
 
