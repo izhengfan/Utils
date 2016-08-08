@@ -8,13 +8,11 @@ By ZHENG Fan fzheng@link.cuhk.edu.hk
 
 #include "Rate.hpp"
 
-using namespace std::chrono;
-
 Rate::Rate(int rate_) {
     rate = rate_;
     int64_t nano = 1e9 / rate;
     
-    durationNeed = nanoseconds( nano );
+    durationNeed = std::chrono::nanoseconds( nano );
 
     timeBegin = std::chrono::high_resolution_clock::now();
     timeEndExpected = timeBegin + durationNeed;
