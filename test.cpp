@@ -1,4 +1,4 @@
-/** 
+/**
 
 Rate: to achieve simple frame rate control using C++ 11 standard library
 
@@ -18,42 +18,42 @@ void print_time_now();
 
 int main(int argc, char** argv)
 {
-    
 
-    int counter = 0;
-    auto tp_start = system_clock::now();
-    int iteration = 300;
 
-    int fps = 30; 
-    Rate rate(fps);
-    for(int i = 0; i < iteration; i++)
-    {
-        counter++;
-        if(counter == fps)
-        {
-            cout << "Time now: ";
-            print_time_now();
-            counter = 0;
-        }
-        if(i == 100)
-            std::this_thread::sleep_for(seconds(2));
-        rate.sleep();
-    }
+	int counter = 0;
+	auto tp_start = system_clock::now();
+	int iteration = 300;
 
-    auto tp_end = system_clock::now();
+	int fps = 30;
+	Rate rate(fps);
+	for (int i = 0; i < iteration; i++)
+	{
+		counter++;
+		if (counter == fps)
+		{
+			cout << "Time now: ";
+			print_time_now();
+			counter = 0;
+		}
+		if (i == 100)
+			std::this_thread::sleep_for(seconds(2));
+		rate.sleep();
+	}
 
-    auto duration = chrono::duration_cast<chrono::milliseconds>(tp_end - tp_start).count();
+	auto tp_end = system_clock::now();
 
-    cout << "After " << iteration << " iterations, " << duration/1e3 << " seconds has passed." << endl; 
+	auto duration = chrono::duration_cast<chrono::milliseconds>(tp_end - tp_start).count();
+
+	cout << "After " << iteration << " iterations, " << duration / 1e3 << " seconds has passed." << endl;
 
 	getchar();
 
-    return 0;
+	return 0;
 }
 
-void print_time_now() 
+void print_time_now()
 {
-    auto tp = system_clock::now();
-    std::time_t tt = system_clock::to_time_t(tp);
-    cout << ctime(&tt) << endl;
+	auto tp = system_clock::now();
+	std::time_t tt = system_clock::to_time_t(tp);
+	cout << ctime(&tt) << endl;
 }
