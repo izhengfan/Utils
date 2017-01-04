@@ -14,7 +14,7 @@ Rate::Rate(int rate_) {
     
     durationNeed = std::chrono::nanoseconds( nano );
 
-    timeBegin = std::chrono::high_resolution_clock::now();
+    timeBegin = std::chrono::system_clock::now();
     timeEndExpected = timeBegin + durationNeed;
 
 }
@@ -23,12 +23,12 @@ Rate::~Rate() {}
 
 void Rate::sleep() {
 
-    timeEnd = std::chrono::high_resolution_clock::now();
+    timeEnd = std::chrono::system_clock::now();
 
     if(timeEnd < timeEndExpected)
         std::this_thread::sleep_until(timeEndExpected);
     else
-        timeEndExpected =  std::chrono::high_resolution_clock::now();
+        timeEndExpected =  std::chrono::system_clock::now();
 
     timeEndExpected += durationNeed;
 }

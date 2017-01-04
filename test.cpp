@@ -8,6 +8,8 @@ By ZHENG Fan fzheng@link.cuhk.edu.hk
 
 #include <iostream>
 #include "Rate.hpp"
+#include <ctime>
+#include <cstdio>
 
 using namespace std;
 using namespace std::chrono;
@@ -19,7 +21,7 @@ int main(int argc, char** argv)
     
 
     int counter = 0;
-    auto tp_start = high_resolution_clock::now();
+    auto tp_start = system_clock::now();
     int iteration = 300;
 
     int fps = 30; 
@@ -38,18 +40,20 @@ int main(int argc, char** argv)
         rate.sleep();
     }
 
-    auto tp_end = high_resolution_clock::now();
+    auto tp_end = system_clock::now();
 
-    auto duration = (tp_end - tp_start).count();
+    auto duration = chrono::duration_cast<chrono::milliseconds>(tp_end - tp_start).count();
 
-    cout << "After " << iteration << " iterations, " << duration/1e9 << " seconds has passed." << endl; 
+    cout << "After " << iteration << " iterations, " << duration/1e3 << " seconds has passed." << endl; 
+
+	getchar();
 
     return 0;
 }
 
 void print_time_now() 
 {
-    auto tp = high_resolution_clock::now();
+    auto tp = system_clock::now();
     std::time_t tt = system_clock::to_time_t(tp);
     cout << ctime(&tt) << endl;
 }
