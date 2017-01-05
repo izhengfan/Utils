@@ -10,13 +10,12 @@ By ZHENG Fan fzheng@link.cuhk.edu.hk
 
 Rate::Rate(int rate_) {
 	rate = rate_;
-	int64_t nano = 1e9 / rate;
+	int64_t nano = static_cast<int64_t>(1e9 / rate);
 
 	durationNeed = std::chrono::nanoseconds(nano);
 
 	timeBegin = std::chrono::system_clock::now();
 	timeEndExpected = timeBegin + durationNeed;
-
 }
 
 Rate::~Rate() {}
@@ -32,4 +31,3 @@ void Rate::sleep() {
 
 	timeEndExpected += durationNeed;
 }
-

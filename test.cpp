@@ -9,7 +9,6 @@ By ZHENG Fan fzheng@link.cuhk.edu.hk
 #include <iostream>
 #include "Rate.hpp"
 #include <ctime>
-#include <cstdio>
 
 using namespace std;
 using namespace std::chrono;
@@ -18,8 +17,6 @@ void print_time_now();
 
 int main(int argc, char** argv)
 {
-
-
 	int counter = 0;
 	auto tp_start = system_clock::now();
 	int iteration = 300;
@@ -46,8 +43,7 @@ int main(int argc, char** argv)
 
 	cout << "After " << iteration << " iterations, " << duration / 1e3 << " seconds has passed." << endl;
 
-	getchar();
-
+	cin.get();
 	return 0;
 }
 
