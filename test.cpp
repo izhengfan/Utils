@@ -42,8 +42,10 @@ int main(int argc, char** argv)
 	auto duration = chrono::duration_cast<chrono::milliseconds>(tp_end - tp_start).count();
 
 	cout << "After " << iteration << " iterations, " << duration / 1e3 << " seconds has passed." << endl;
+	cout << "Press Enter to exit...";
 
 	cin.get();
+
 	return 0;
 }
 
