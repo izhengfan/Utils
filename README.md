@@ -1,6 +1,11 @@
 ## Utils
 
-### Rate: Achieve simple frame rate control using C++ 11 standard library
+
+- [Rate](#rate)
+
+### Rate
+
+Achieve simple frame rate control using C++ 11 standard library
 
 Header: `Rate.hpp`, Source: `Rate.cpp`.
 
