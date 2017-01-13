@@ -1,10 +1,10 @@
-## Rate: Achieve simple frame rate control using C++ 11 standard library
+## Utils
 
-### Dependency
+---
 
-Requires C++ 11 only.
+### Rate: Achieve simple frame rate control using C++ 11 standard library
 
-### Usage
+Header: `Rate.hpp`, Source: `Rate.cpp`.
 
 Use `Rate` to control framerate of a loop, like this:
 
