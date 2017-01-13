@@ -9,8 +9,9 @@ By ZHENG Fan fzheng@link.cuhk.edu.hk
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
-#include "Rate.hpp"
+#include "Rate.h"
 #include <ctime>
+#include <thread>
 
 using namespace std;
 using namespace std::chrono;
@@ -19,6 +20,7 @@ void print_time_now();
 
 int main(int argc, char** argv)
 {
+	using namespace utl;
 	int counter = 0;
 	auto tp_start = system_clock::now();
 	int iteration = 300;

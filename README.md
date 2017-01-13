@@ -2,12 +2,13 @@
 
 
 - [Rate](#rate)
+- [Histogram](#histogram)
 
 ### Rate
 
 Achieve simple frame rate control using C++ 11 standard library
 
-Header: `Rate.hpp`, Source: `Rate.cpp`.
+Header: `Rate.h`, Source: `Rate.cpp`.
 
 Use `Rate` to control framerate of a loop, like this:
 
@@ -23,15 +24,7 @@ while(true)
 
 If the execution in one loop use more time than the time limit set by FPS, `Rate` just set the current moment as the timing beginning point. 
 
-Refer to `test.cpp` for the usage. Test it like:
-
-```
-c++ -c Rate.hpp Rate.cpp -std=c++11
-c++ test.cpp Rate.o  -std=c++11 -o ./test
-./test
-``` 
-
-The output should be like:
+Refer to `test/test_rate.cpp` for the usage. The output should be like:
 
 ```
 Time now: Mon Aug  8 18:44:04 2016
@@ -56,3 +49,11 @@ Time now: Mon Aug  8 18:44:15 2016
 
 After 300 iterations, 11.9673 seconds has passed.
 ```
+
+### Histogram
+
+Header: `Histogram.h`, Source: `Histogram.cpp`.
+
+Create a histogram (output as `vector<int>`) from source `vector<_T>` given a range `vector<_T>`. The provided API is `Histogram::create(src, range, out)`. For any given range, the sorting principle is __left closed and right open__ (i.e. `[min max)`). Obviously, the size of the output vector is one less than that of the range.
+
+For usage, refer to `test/test_histogram.cpp`.

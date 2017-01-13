@@ -6,28 +6,34 @@ By ZHENG Fan fzheng@link.cuhk.edu.hk
 
 */
 
-#include "Rate.hpp"
+#include "Rate.h"
+#include <thread>
 
-Rate::Rate(int rate_) {
-	rate = rate_;
-	int64_t nano = static_cast<int64_t>(1e9 / rate);
+namespace utl
+{
 
-	durationNeed = std::chrono::nanoseconds(nano);
+	Rate::Rate(int rate_) {
+		rate = rate_;
+		int64_t nano = static_cast<int64_t>(1e9 / rate);
 
-	timeBegin = std::chrono::system_clock::now();
-	timeEndExpected = timeBegin + durationNeed;
-}
+		durationNeed = std::chrono::nanoseconds(nano);
 
-Rate::~Rate() {}
+		timeBegin = std::chrono::system_clock::now();
+		timeEndExpected = timeBegin + durationNeed;
+	}
 
-void Rate::sleep() {
+	Rate::~Rate() {}
 
-	timeEnd = std::chrono::system_clock::now();
+	void Rate::sleep() {
 
-	if (timeEnd < timeEndExpected)
-		std::this_thread::sleep_until(timeEndExpected);
-	else
-		timeEndExpected = std::chrono::system_clock::now();
+		timeEnd = std::chrono::system_clock::now();
 
-	timeEndExpected += durationNeed;
+		if (timeEnd < timeEndExpected)
+			std::this_thread::sleep_until(timeEndExpected);
+		else
+			timeEndExpected = std::chrono::system_clock::now();
+
+		timeEndExpected += durationNeed;
+	}
+
 }
