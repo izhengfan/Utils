@@ -19,9 +19,9 @@ int main()
 	}
 	std::vector<int> v_out;
 	utl::Histogram::create(v_ints, v_range, v_out);
-	for (auto itr = v_out.begin(), itrend = v_out.end(); itr != itrend; itr++)
+	for (const int& elem : v_out)
 	{
-		std::cout << *itr << " ";
+		std::cout << elem << " ";
 	}
 	std::cout << std::endl;
 	std::cin.get();
