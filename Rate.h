@@ -20,6 +20,10 @@ namespace utl
 		Rate(int rate_);
 		~Rate();
 
+		// Set non-copyable
+		Rate(const Rate&) = delete;
+		Rate& operator= (const Rate&) = delete;
+
 		void sleep();
 
 	private:
