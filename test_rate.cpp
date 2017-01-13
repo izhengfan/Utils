@@ -6,6 +6,8 @@ By ZHENG Fan fzheng@link.cuhk.edu.hk
 
 */
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include "Rate.hpp"
 #include <ctime>
