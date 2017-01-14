@@ -17,18 +17,14 @@ namespace utl
 		int64_t nano = static_cast<int64_t>(1e9 / rate);
 
 		durationNeed = std::chrono::nanoseconds(nano);
-
-		timeBegin = std::chrono::system_clock::now();
-		timeEndExpected = timeBegin + durationNeed;
+		timeEndExpected = std::chrono::system_clock::now() + durationNeed;
 	}
 
 	Rate::~Rate() {}
 
 	void Rate::sleep() {
 
-		timeEnd = std::chrono::system_clock::now();
-
-		if (timeEnd < timeEndExpected)
+		if (std::chrono::system_clock::now() < timeEndExpected)
 			std::this_thread::sleep_until(timeEndExpected);
 		else
 			timeEndExpected = std::chrono::system_clock::now();
