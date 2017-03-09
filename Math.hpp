@@ -14,18 +14,16 @@ template<typename ContainerT>
 double median(const ContainerT& c)
 {
 	using T_ = typename ContainerT::value_type;
-	std::vector<T_> temp = std::vector<T_>(c.begin(), c.end());
-	std::sort(temp.begin(), temp.end());
-	if (temp.size() % 2 == 0)
+	std::vector<T_> v = std::vector<T_>(c.begin(), c.end());
+	std::sort(v.begin(), v.end());
+	if (v.size() % 2 == 0)
 	{
-		int halfsize = temp.size() / 2;
-		auto left = *(temp.begin() + halfsize - 1);
-		auto right = *(temp.begin() + halfsize);
-		return double(left + right) / 2.;
+		int halfsize = v.size() / 2;
+		return double(v[halfsize-1] + v[halfsize]) / 2.;
 	}
 	else
 	{
-		return double(*(temp.begin() + temp.size() / 2));
+		return double(v[v.size() / 2]);
 	}
 }
 
