@@ -45,14 +45,12 @@ std::pair<typename ContainerT::value_type, typename ContainerT::value_type> minm
 template<typename ContainerT>
 typename ContainerT::value_type min(const ContainerT& c)
 {
-	using T_ = typename ContainerT::value_type;
 	return *(std::min_element(c.cbegin(), c.cend()));
 }
 
 template<typename ContainerT>
 typename ContainerT::value_type max(const ContainerT& c)
 {
-	using T_ = typename ContainerT::value_type;
 	return *(std::max_element(c.cbegin(), c.cend()));
 }
 
