@@ -1,3 +1,4 @@
+
 ## Utils
 
 
@@ -5,6 +6,8 @@
 - [Histogram](#histogram)
 - [Math](#math)
     - [median](#median)
+    - [average](#average)
+    - [min, max, minmax](#minmaxminmax)
 
 ### Rate
 
@@ -69,3 +72,11 @@ Mathematical calculation functions.
 #### median
 
 Return median number as `double` of all elements in a stl container.
+
+#### average
+
+Return average value (unlike `median`, here the returned type is the same as in the container)
+
+#### min max minmax
+
+Return minimum, maximum, or minimum-maximum (as `std::pair`) value(s).
