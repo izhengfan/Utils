@@ -3,6 +3,8 @@
 
 - [Rate](#rate)
 - [Histogram](#histogram)
+- [Math](#math)
+    - [median](#median)
 
 ### Rate
 
@@ -57,3 +59,13 @@ Header: `Histogram.h`, Source: `Histogram.cpp`.
 Create a histogram (output as `vector<int>`) from source `vector<_T>` given a range `vector<_T>`. The provided API is `Histogram::create(src, range, out)`. For any given range, the sorting principle is __left closed and right open__ (i.e. `[min max)`). Obviously, the size of the output vector is one less than that of the range.
 
 For usage, refer to `test/test_histogram.cpp`.
+
+### Math
+
+Header: `Math.hpp`.
+
+Mathematical calculation functions.
+
+#### median
+
+Return median number as `double` of all elements in a stl container.
