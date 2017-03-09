@@ -7,8 +7,6 @@
 
 namespace utl
 {
-namespace math
-{
 
 template<typename ContainerT>
 double median(const ContainerT& c)
@@ -26,8 +24,38 @@ double median(const ContainerT& c)
 		return double(v[v.size() / 2]);
 	}
 }
+	
+// Note: If input is container of int, return type is int.
+template<typename ContainerT>
+typename ContainerT::value_type average(const ContainerT& c)
+{
+	using T_ = typename ContainerT::value_type;
+	T_ sum = std::accumulate(c.cbegin(), c.cend(), T_(0));
+	return sum / T_(c.size());
+}
 
-} // namespace math
+template<typename ContainerT>
+std::pair<typename ContainerT::value_type, typename ContainerT::value_type> minmax(const ContainerT& c)
+{
+	using T_ = typename ContainerT::value_type;
+	auto minmax_element = std::minmax_element(c.cbegin(), c.cend());
+	return std::pair<T_,T_>(*minmax_element.first, *minmax_element.second);
+}
+
+template<typename ContainerT>
+typename ContainerT::value_type min(const ContainerT& c)
+{
+	using T_ = typename ContainerT::value_type;
+	return *(std::min_element(c.cbegin(), c.cend()));
+}
+
+template<typename ContainerT>
+typename ContainerT::value_type max(const ContainerT& c)
+{
+	using T_ = typename ContainerT::value_type;
+	return *(std::max_element(c.cbegin(), c.cend()));
+}
+
 } // namespace utl
 
 #endif
