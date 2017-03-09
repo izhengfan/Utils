@@ -7,7 +7,7 @@
 - [Math](#math)
     - [median](#median)
     - [average](#average)
-    - [min, max, minmax](#minmaxminmax)
+    - [min, max, minmax](#min-max-minmax)
 
 ### Rate
 
@@ -77,6 +77,6 @@ Return median number as `double` of all elements in a stl container.
 
 Return average value (unlike `median`, here the returned type is the same as in the container)
 
-#### min max minmax
+#### min, max, minmax
 
 Return minimum, maximum, or minimum-maximum (as `std::pair`) value(s).
