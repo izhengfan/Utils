@@ -6,7 +6,7 @@
 - [Histogram](#histogram)
 - [Math](#math)
     - [median](#median)
-    - [average](#average)
+    - [mean](#mean)
     - [min, max, minmax](#min-max-minmax)
     - [norm](#norm)
     - [normSquare](#normsquare)
@@ -76,9 +76,9 @@ Mathematical calculation functions.
 
 Return median number as `double` of all elements in a stl container.
 
-#### average
+#### mean
 
-Return average value (unlike `median`, here the returned type is the same as in the container)
+Return mean(average) value (unlike `median`, here the returned type is the same as in the container)
 
 #### min, max, minmax
 
