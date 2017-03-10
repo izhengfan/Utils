@@ -12,7 +12,7 @@ template<typename ContainerT>
 double median(const ContainerT& c)
 {
 	using T_ = typename ContainerT::value_type;
-	std::vector<T_> v = std::vector<T_>(c.begin(), c.end());
+	std::vector<T_> v = std::vector<T_>(c.cbegin(), c.cend());
 	std::sort(v.begin(), v.end());
 	if (v.size() % 2 == 0)
 	{
