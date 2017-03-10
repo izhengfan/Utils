@@ -8,6 +8,9 @@
     - [median](#median)
     - [average](#average)
     - [min, max, minmax](#min-max-minmax)
+    - [norm](#norm)
+    - [normSquare](#normsquare)
+    - [stddev](#stddev)
 
 ### Rate
 
@@ -80,3 +83,15 @@ Return average value (unlike `median`, here the returned type is the same as in 
 #### min, max, minmax
 
 Return minimum, maximum, or minimum-maximum (as `std::pair`) value(s).
+
+#### norm
+
+Return norm (sqrt of the sum of all elements' square).
+
+#### normSquare
+
+Return sum of all elements's square.
+
+#### stddev
+
+Return standard deviation.
