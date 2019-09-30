@@ -1,6 +1,8 @@
 
 ## Utils
 
+![](https://github.com/izhengfan/Utils/workflows/CI/badge.svg)
+
 
 - [Rate](#rate)
 - [Histogram](#histogram)
