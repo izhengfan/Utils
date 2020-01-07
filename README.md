@@ -1,7 +1,7 @@
 
 ## cxxtk
 
-![](https://github.com/izhengfan/Utils/workflows/CI/badge.svg)
+![](../../workflows/CI/badge.svg)
 
 
 - [Rate](#rate)
