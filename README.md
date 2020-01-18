@@ -19,5 +19,5 @@ To build with unit tests (GTest required) and run the tests:
 cd build
 cmake .. -DBUILD_TESTS=ON
 make
-./tests/ALL_TEST
+./ALL_TEST
 ```
