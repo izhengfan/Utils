@@ -1,3 +1,12 @@
+/** ----------------------------------------------
+  * Copyright (C) 2020 All rights reserved.
+  * @file: Math.hpp
+  * @version: 0.0.1
+  * @author: ZHENG Fan
+  * @date: 2020-01-18
+  * @brief: 
+  * @details: 
+  *-----------------------------------------------*/
 #pragma once
 #ifndef UTL_MATH_
 #define UTL_MATH_
@@ -7,7 +16,7 @@
 #include <cmath>
 #include <numeric>
 
-namespace utl
+namespace xxtk
 {
 
 template<typename ContainerT>

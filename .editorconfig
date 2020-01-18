@@ -1,0 +1,17 @@
+# top-most EditorConfig file
+root = true
+
+[*.{cc,hh,hpp,cpp,c,h}]
+indent_style = tab
+indent_size = 4
+
+[CMakeLists.txt]
+indent_style = space
+indent_size = 2
+[*.{cmake}]
+indent_style = space
+indent_size = 2
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab

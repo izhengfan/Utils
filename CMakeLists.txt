@@ -1,18 +1,21 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(utils)
+project(cxxtk)
+
+option(BULILD_SHARED_LIBS "" OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR} )
+file(GLOB_RECURSE HEADERS "src/*.h*" )
+file(GLOB_RECURSE SOURCES "src/*.cpp" )
 
-file(GLOB_RECURSE HEADERS "*.h*" )
-file(GLOB_RECURSE SOURCES "*.cpp" )
+add_library(${PROJECT_NAME} ${HEADERS} ${SOURCES})
+if(UNIX)
+  target_link_libraries(${PROJECT_NAME} pthread)
+endif()
 
-add_library(util ${HEADERS} ${SOURCES})
-
-add_executable(testmath test/test_math.cpp)
-add_executable(testrate test/test_rate.cpp)
-target_link_libraries(testrate util)
-add_executable(testhist test/test_histogram.cpp)
-target_link_libraries(testhist util)
+option(BUILD_TESTS "" OFF)
+if(BUILD_TESTS)
+  add_subdirectory(tests)
+endif()
 

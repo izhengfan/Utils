@@ -1,15 +1,16 @@
-/**
-
-Rate: to achieve simple frame rate control using C++ 11 standard library
-
-By ZHENG Fan fzheng@link.cuhk.edu.hk
-
-*/
-
-#include "Rate.h"
+/** ----------------------------------------------
+  * Copyright (C) 2020 All rights reserved.
+  * @file: Rate.cpp
+  * @version: 0.0.1
+  * @author: ZHENG Fan
+  * @date: 2020-01-18
+  * @brief: 
+  * @details: 
+  *-----------------------------------------------*/
+#include "Rate.hpp"
 #include <thread>
 
-namespace utl
+namespace xxtk
 {
 
 	Rate::Rate(int rate_) {

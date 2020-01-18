@@ -1,9 +1,18 @@
+/** ----------------------------------------------
+  * Copyright (C) 2020 All rights reserved.
+  * @file: Histogram.hpp
+  * @version: 0.0.1
+  * @author: ZHENG Fan
+  * @date: 2020-01-18
+  * @brief: 
+  * @details: 
+  *-----------------------------------------------*/
 #pragma once
 #ifndef UTL_HISTOGRAM_H_
 #define UTL_HISTOGRAM_H_
 
 #include <vector>
-namespace utl
+namespace xxtk
 {
 
 	class Histogram

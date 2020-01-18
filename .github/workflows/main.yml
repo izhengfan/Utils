@@ -6,13 +6,26 @@ jobs:
   build:
 
     runs-on: ubuntu-18.04
-    
+
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - name: Prepare gtest
+    - run: |
+        mkdir build
+        cd build
+        git clone https://github.com/google/googletest.git
+        cd googletest
+        mkdir build
+        cd build
+        cmake ..
+        make
+        sudo make install
     - name: Run cmake build
       run: |
-        mkdir build
-        cd build && cmake .. && make
-        
+        cd build
+        cmake .. -DBUILD_TESTS=ON
+        make
+    - name: Run unit tests
+      run: |
+        cd build
+        ./tests/ALL_TEST

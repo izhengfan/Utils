@@ -1,7 +1,16 @@
-#include "Histogram.h"
+/** ----------------------------------------------
+  * Copyright (C) 2020 All rights reserved.
+  * @file: Histogram.cpp
+  * @version: 0.0.1
+  * @author: ZHENG Fan
+  * @date: 2020-01-18
+  * @brief: 
+  * @details: 
+  *-----------------------------------------------*/
+#include "Histogram.hpp"
 #include <cstdint>
 
-namespace utl
+namespace xxtk
 {
 	template<typename _T>
 	void histogram_template_create(const std::vector<_T>& src, const std::vector<_T>& range, std::vector<int>& out)
