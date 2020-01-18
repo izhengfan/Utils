@@ -8,8 +8,6 @@
   * @details: 
   *-----------------------------------------------*/
 #pragma once
-#ifndef UTL_HISTOGRAM_H_
-#define UTL_HISTOGRAM_H_
 
 #include <vector>
 namespace xxtk
@@ -28,6 +26,5 @@ namespace xxtk
 
 	};
 
-} // namespace utl end
+}
 
-#endif // !UTL_HISTOGRAM_H_

@@ -8,8 +8,6 @@
   * @details: 
   *-----------------------------------------------*/
 #pragma once
-#ifndef UTL_MATH_
-#define UTL_MATH_
 
 #include <vector>
 #include <algorithm>
@@ -99,6 +97,5 @@ typename ContainerT::value_type stddev(const ContainerT& c, typename ContainerT:
 
 
 
-} // namespace utl
+}
 
-#endif

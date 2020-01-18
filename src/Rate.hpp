@@ -8,9 +8,6 @@
   * @details: 
   *-----------------------------------------------*/
 #pragma once
-#ifndef UTL_RATE_H_
-#define UTL_RATE_H_
-
 #include <chrono>
 
 namespace xxtk
@@ -35,6 +32,4 @@ namespace xxtk
 
 	};
 
-} // namespace utl end
-
-#endif // !RATE_HPP_
+}
