@@ -14,7 +14,7 @@ cmake ..
 make
 ```
 
-To build with unit tests (GTest required) and run the tests:
+To build with unit tests ([GTest required](.github/workflows/main.yml#L12)) and run the tests:
 ```
 cd build
 cmake .. -DBUILD_TESTS=ON
