@@ -89,7 +89,7 @@ typename ContainerT::value_type stddev(const ContainerT& c, typename ContainerT:
 	using T_ = typename ContainerT::value_type;
 	if(c.size() <= 1)
 		return T_(0);
-	T_ sum;
+	T_ sum(0);
 	for(auto itr = c.cbegin(), itrend = c.cend(); itr != itrend; itr++)
 		sum += std::pow(*itr -  mean, 2);
 	return std::sqrt(sum / T_(c.size() - 1));
