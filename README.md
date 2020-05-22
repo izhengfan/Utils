@@ -11,13 +11,14 @@ cd cxxtk
 mkdir build
 cd build
 cmake ..
-make
+cmake --build . --target cxxtk
 ```
 
 To build with unit tests ([GTest required](.github/workflows/main.yml#L12)) and run the tests:
-```
+```sh
 cd build
 cmake .. -DBUILD_TESTS=ON
-make
-./ALL_TEST
+cmake --build . --target ALL_TEST
+./ALL_TEST 
+# ./Debug/ALL_TEST.exe (on Windows with Visual C++)
 ```
